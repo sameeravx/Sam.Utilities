@@ -1,31 +1,36 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
 
-	  <PackageId>Sam.Utilities.StringKit</PackageId>
-	  <Version>0.1.0</Version>
-	  <Authors>Sam</Authors>
-	  <Company>Sam Utilities</Company>
-	  <Description>A modern C# string utility library with extension methods and helper functions.</Description>
-	  <PackageTags>string;utilities;extensions;csharp</PackageTags>
-	  <RepositoryUrl>https://github.com/sameeravx/Sam.Utilities</RepositoryUrl>
-	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageId>Sam.Utilities.StringKit</PackageId>
+		<Version>0.1.1</Version>
 
-	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
-	  <PackageReadmeFile>README.md</PackageReadmeFile>
-	  <GenerateDocumentationFile>true</GenerateDocumentationFile>
-	  <PublishRepositoryUrl>true</PublishRepositoryUrl>
-  </PropertyGroup>
+		<Authors>Sameera Liyanage</Authors>
+		<Company>Sameeravx</Company>
+
+		<Description>A modern C# string utility library with extension methods and helper functions.</Description>
+		<PackageTags>string;utilities;extensions;csharp</PackageTags>
+
+		<RepositoryUrl>https://github.com/sameeravx/Sam.Utilities</RepositoryUrl>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+	</PropertyGroup>
+
 	<ItemGroup>
 		<None Include="README.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
-	<ItemGroup>
-	  <Folder Include="Constants\" />
-	  <Folder Include="Validators\" />
-	</ItemGroup>
 
+	<ItemGroup>
+		<Folder Include="Constants\" />
+		<Folder Include="Validators\" />
+	</ItemGroup>
 
 </Project>
