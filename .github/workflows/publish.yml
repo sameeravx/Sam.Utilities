@@ -32,11 +32,11 @@ jobs:
       - name: Pack
         run: dotnet pack src/Sam.Utilities.StringKit/Sam.Utilities.StringKit.csproj --configuration Release --no-build --output ./artifacts
 
-      - name: NuGet trusted publishing login
+      - name: NuGet login
         uses: NuGet/login@v1
+        id: login
         with:
           user: sameeravx
 
       - name: Publish to NuGet
-        # Use 'OY2B' exactly as written below to activate the OIDC token exchange
-        run: dotnet nuget push "./artifacts/*.nupkg" --api-key OY2B --source https://api.nuget.org/v3/index.json
+        run: dotnet nuget push "./artifacts/*.nupkg" --api-key ${{ steps.login.outputs.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
