@@ -38,5 +38,5 @@ jobs:
           user: sameeravx
 
       - name: Publish to NuGet
-        # Removed the --api-key flag since NuGet/login handles authentication automatically
-        run: dotnet nuget push "./artifacts/*.nupkg" --source https://api.nuget.org/v3/index.json
+        # Use 'OY2B' exactly as written below to activate the OIDC token exchange
+        run: dotnet nuget push "./artifacts/*.nupkg" --api-key OY2B --source https://api.nuget.org/v3/index.json
