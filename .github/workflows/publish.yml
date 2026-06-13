@@ -1,0 +1,41 @@
+name: Publish NuGet Package
+
+on:
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore
+        run: dotnet restore Sam.Utilities.slnx
+
+      - name: Build
+        run: dotnet build Sam.Utilities.slnx --configuration Release --no-restore
+
+      - name: Test
+        run: dotnet test Sam.Utilities.slnx --configuration Release --no-build
+
+      - name: Pack
+        run: dotnet pack src/Sam.Utilities.StringKit/Sam.Utilities.StringKit.csproj --configuration Release --no-build --output ./artifacts
+
+      - name: NuGet trusted publishing login
+        uses: NuGet/login@v1
+        with:
+          user: sameeravx
+
+      - name: Publish to NuGet
+        run: dotnet nuget push "./artifacts/*.nupkg" --source https://api.nuget.org/v3/index.json
