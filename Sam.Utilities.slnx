@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/playground/">
+    <Project Path="playground/Sam.Utilities.Playground/Sam.Utilities.Playground.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/Sam.Utilities.StringKit/Sam.Utilities.StringKit.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Sam.Utilities.StringKit.Tests/Sam.Utilities.StringKit.Tests.csproj" Id="0385ae41-7a63-4630-a3a5-58f9b2c0e236" />
+  </Folder>
+</Solution>
