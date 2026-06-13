@@ -38,4 +38,5 @@ jobs:
           user: sameeravx
 
       - name: Publish to NuGet
-        run: dotnet nuget push "./artifacts/*.nupkg" --api-key "$NUGET_API_KEY" --source https://api.nuget.org/v3/index.json
+        # Removed the --api-key flag since NuGet/login handles authentication automatically
+        run: dotnet nuget push "./artifacts/*.nupkg" --source https://api.nuget.org/v3/index.json
